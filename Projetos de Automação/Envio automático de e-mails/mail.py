@@ -6,12 +6,13 @@ from dotenv import load_dotenv
 import os
 
 #Carrega Variáveis do .env
-
 load_dotenv()
 
+#Pega o e-mail e a senha(ou senha de app)das variáveis de ambiente
 EMAIL = os.getenv("EMAIL")
 SENHA = os.getenv("SENHA")
 
+#Configurações do servidor SMTP do gmail e da porta TLS
 smtp_server = "smtp.gmail.com"
 smtp_port = 587
 
