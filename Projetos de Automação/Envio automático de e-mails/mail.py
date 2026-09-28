@@ -5,7 +5,7 @@ from email.mime.multipart import MIMEMultipart
 from dotenv import load_dotenv
 import os
 
-#Carrega Variáveis do .env
+#Carrega variáveis do .env
 load_dotenv()
 
 #Pega o e-mail e a senha(ou senha de app)das variáveis de ambiente
@@ -16,6 +16,7 @@ SENHA = os.getenv("SENHA")
 smtp_server = "smtp.gmail.com"
 smtp_port = 587
 
+#Função responsável por montar e enviar o e-mail individual para cada contato
 def enviar_email(destinatario,nome):
 
     assunto = "Teste de envio automático"
@@ -56,6 +57,7 @@ Marcos
         print(f"Erro ao enviar email para {nome}")
         print(erro)
 
+#Função que lê o arquivo CSV de contatos e chama a função de envio
 def main():
 
     with open("contatos.csv",newline="",encoding="utf-8") as arquivo:
